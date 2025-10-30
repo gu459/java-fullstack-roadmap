@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户注册表</title>
+</head>
+<body>
+    <h1 align="center">用户注册表</h1>
+
+<!-- 允许：
+    在 <th> 或 <td> 内部嵌套 <div> <span>（用于样式调整、内容分组等）。
+不允许：
+    用 <div> <span> 替代 <tr> <th> <td> 等表格标签，或在表格核心层级（table/tr）中直接放这些标签
+最初的布局混乱主要是因为:想用水晶（表格布局），却混进了玻璃（div/span 直接嵌套）-->
+    
+<form>
+    <table border="2" align="center" cellspacing="0" cellpadding="5">
+
+        <!-- 表格和表单嵌套关系错误:将 <form> 放在了 <table> 内部
+        <form align="center" method="get"></form> -->
+
+            <!-- 用户名 -->
+             <!-- 不需要指定value属性,用户填写内容就是value属性的值 -->
+            <tr>
+                <th>用户名:</th>
+                <td><input type="text" name="username"></td>
+            </tr>
+
+            <!-- 密码 -->
+            <tr>
+                <th>密码:</th>
+                <td><input type="password" name="password"></td>
+            </tr>
+
+            <!-- 确认密码 -->
+            <tr>
+                <th>确认密码:</th>
+                <td><input type="password" name="sure"></td>
+            </tr>
+
+            <!-- 电子邮箱 -->
+            <tr>
+                <th>电子邮箱:</th>
+                <td><input type="text" name="emile"></td>
+            </tr>
+
+            <!-- 手机号码 -->
+            <tr>
+                <th>手机号码:</th>
+                <td><input type="text" name="phone"></td>
+            </tr>
+
+            <!-- 性别 -->
+             <!-- value需要设置为男或女,否则无法区分选择了哪个单选框 -->
+            <tr>
+                <th>性别:</th>
+                <td>
+                    <input type="radio" name="gender" value="男" checked>男
+                    <input type="radio" name="gender" value="女">女
+                    </td>
+            </tr>
+
+            <!-- 是否有房 -->
+             <!-- value需要设置为有或没有,否则无法区分选择了哪个单选框 --> -->
+            <tr>
+                <th>是否有房:</th>
+                <td>
+                    <input type="radio" name="house" value="有房子" checked>有
+                    <input type="radio" name="house" value="没有房子">没有
+                </td>
+            </tr>
+
+            <!-- 爱好 -->
+            <tr>
+                <th>爱好:</th>
+                <td>
+                    <input type="checkbox" name="star">范冰冰
+                    <input type="checkbox" name="star" checked>刘亦菲
+                    <input type="checkbox" name="star">佟丽娅
+                    <input type="checkbox" name="star">杨颖
+                    <input type="checkbox" >柳岩
+                </td>
+            </tr>
+
+            <!-- 户籍 -->
+            <tr>
+                <th>户籍:</th>
+                <td>
+                    <select name="户籍" >
+                        <!-- 设置北京为选择状态 -->
+                        <!-- 注意:value属性定义表单提交时传递的数据值 -->
+                        <!-- <option>写这里才会显示</option> -->
+                        <option value="北京" selected>北京</option>
+                        <option value="上海">上海</option>
+                        <option value="广州">广州</option>
+                        <option value="深圳">深圳</option>
+                        <option value="重庆">重庆</option>
+                        <option value="杭州">杭州</option>
+                        <option value="武汉">武汉</option>
+                        <option value="南京">南京</option>
+                        <option value="天津">天津</option>
+                    </select>
+                </td>
+            </tr>
+
+            <!-- 课程 -->
+             <!-- 课程可以多选,通过添加 multiple 属性实现 -->
+            <tr>
+                <th>课程:</th>
+                <td>
+                    <select name="cource" multiple>
+                        <option value="JavaEE">JavaEE</option>
+                        <option value="web前端">web前端</option>
+                        <option value="数据结构">数据结构</option>
+                        <option value="C++">C++</option>
+                        <option value="Python">Python</option>
+                    </select>        
+                </td>
+            </tr>
+
+            <!-- 头像 -->
+            <tr>
+                <th>头像:</th>
+                <td><input type="file"></td>
+            </tr>
+
+            <!-- 个人介绍 -->
+            <tr>
+                <th>个人介绍:</th>
+                <td>
+                    <!-- 一个文本区域（多行文本输入框），列数为 50，行数为 20 -->
+                    <textarea cols="50" rows="20"></textarea>
+                </td>
+            </tr>
+
+            <!-- 验证码 -->
+            <tr>
+                <th>验证码:</th>
+                <td>
+                    <input type="text">
+                    8888
+                </td>
+            </tr>
+
+        <tfoot>
+            <!-- 是否同意协议 -->
+             <!-- 
+              1.无论单选框（radio）有多少个，value 属性都建议显式设置，
+              2.包括 “是否同意协议” 这种单个选项的场景
+              3.细节:单个单选框一旦选中,无法取消选中。
+              4.因此是否同意协议” 更适合用复选框（checkbox）
+              5.checkbox的value属性也需要程序员显示的设置 -->
+            <tr>
+                <td colspan="2" align="center"><input type="checkbox" name="agree" >是否阅读并同意协议<td>
+            </tr>
+
+            <!-- 提交与重置 -->
+            <tr>
+                <td colspan="2" align="center">
+                    <input type="submit">
+                    <input type="reset">
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</form>
+
+</body>
+</html>

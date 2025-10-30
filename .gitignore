@@ -1,0 +1,16 @@
+# 忽略名仓库根目录下的 "jikeweilai" 的文件夹（无论在哪个层级）
+/jikeweilai/
+
+# 忽略仓库根目录下的 "javacoed"文件夹
+/javacode/
+
+# 忽略所有 .tmp 后缀的文件
+
+# # 忽略仓库根目录下的 "private-docs" 文件夹
+# /private-docs/
+
+# # 忽略所有 .log 后缀的文件
+# *.log
+
+# # 忽略特定文件（比如 "secret.txt"）
+# secret.txt
